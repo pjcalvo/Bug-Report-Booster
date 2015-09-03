@@ -1,0 +1,54 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>PetWork App</title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link rel="stylesheet" href="/assets/css/main.css">
+        
+        
+		<!--[if lt IE 9]>
+			<script src="js/vendor/respond.js"></script>
+			<script src="js/vendor/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+        <header>
+            <img src="assets/images/1800logo.png">
+        </header>
+        <h1>TFS AUTO BUG GENERATOR</h1>
+        <h4>TFS Default collection: //tfs/tfs/DefaultCollection/Ecommerce</h4>
+        <div id="loading">
+            Collecting some very cool data...
+            <br>
+            <img src="assets/images/loading.gif">
+        </div>
+                
+        <div id="loaded">        
+            <div class="detail"><p class="details">Current Url: </p><input class="site-info" id="url" value="asds" readonly></div>
+            <div class="detail"><p class="details">Current Browser: </p><input class="site-info" id="browser" value=""></div>
+            <div class="detail"><p class="details">Current OS: </p><input class="site-info" id="os"  value=""></div>
+            
+            <div class="bottom-container">
+                <div class="img-container detail">
+                    <p class="details">Screenshot: </p>
+                    <img id="screen-capture" src="/assets/images/default.png"></img>
+                </div>
+                
+            </div>
+            <div class="submit-container">
+                <input id="submit" type="button" value="Create Bug">
+            </div>
+            <br>
+            
+        </div>
+    </body>
+</html>
+
+
+<script src="assets/js/app.js"></script>
+<script src="assets/js/html2canvas.js"></script>
+<script src="assets/js/jquery.js"></script>
+<script src="assets/js/detect.js"></script>
