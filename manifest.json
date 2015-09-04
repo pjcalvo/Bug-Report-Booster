@@ -1,9 +1,9 @@
 {
   "manifest_version": 2,
 
-  "name": "TFS (TFS Integrating Testing Service)",
-  "description": "This extension opens TFS and prepopulate some default info",
-  "version": "1.0",
+  "name": "Bug Report Booster",
+  "description": "This extension collects environment data and opens the bug tracking tool",
+  "version": "0.5",
     
   "background": {
     "scripts": ["/assets/js/background.js"]
@@ -12,23 +12,20 @@
   "content_scripts": [
     {
       "matches": ["https://tfs/tfs/*"],
-      "js": ["/assets/js/jquery.js", "/assets/js/update.js"]
+      "js": ["/assets/js/vendors/jquery.js", "/assets/js/update.js"]
     }
   ],
 
   "browser_action": {
-    "default_icon": "/assets/images/bug.png",
-    "default_popup": "tfsExt.html"
+    "default_icon": "/assets/images/icon.png",
+    "default_popup": "popup.html",
+    "default_title": "Bug Report Booster"
   },
   "permissions": [
     "activeTab",
     "background",
-    "storage",
     "https://tfs/*",
     "clipboardWrite",
-    "clipboardRead",
-    "downloads"
-      
-      
+    "downloads"     
   ]
 }
