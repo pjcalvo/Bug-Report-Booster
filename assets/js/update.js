@@ -2,7 +2,7 @@ var imageURL, os, browser, webURL;
 
 chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
-    
+     
       console.log(request);
             
       imageURL = request.imageURL;
@@ -35,27 +35,13 @@ function sendTheInfo(){
     
     //select the environment
     $('#witc_132_txt').val(environment);
-    
-    //copy to clipboard the data
-    copyToClipboard('Browser: ' + browser +
-                   '\n. Found in URL: ' + webURL + '\n' +
-                   '\n. OS: ' + os);
-    alert('Info\n\nEnvironment data copied to clipboard!!');
-    
-    $('#163').contents().find('body').val(environment);
         
-};
-
-function copyToClipboard( text ){
-                var copyDiv = document.createElement('div');
-                copyDiv.contentEditable = true;
-                document.body.appendChild(copyDiv);
-                copyDiv.innerHTML = text;
-                copyDiv.unselectable = "off";
-                copyDiv.focus();
-                document.execCommand('SelectAll');
-                document.execCommand("Copy", false, null);
-                document.body.removeChild(copyDiv);
+    var dataToCopy = 'Browser: ' + browser +
+                   '<br>Found in URL: ' + webURL +
+                   '<br>OS: ' + os;
+    
+    $('#163').contents().find('iframe').contents().find('body').append(dataToCopy) 
+        
 };
 
     

@@ -12,7 +12,8 @@
   "content_scripts": [
     {
       "matches": ["https://tfs/tfs/*"],
-      "js": ["/assets/js/vendors/jquery.js", "/assets/js/update.js"]
+      "js": ["/assets/js/vendors/jquery.js", "/assets/js/update.js"],
+       "all_frames": true
     }
   ],
 
@@ -24,8 +25,7 @@
   "permissions": [
     "activeTab",
     "background",
-    "https://tfs/*",
-    "clipboardWrite",
+    "https://*/*",
     "downloads"     
   ]
 }
