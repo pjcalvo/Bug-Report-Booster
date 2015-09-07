@@ -62,11 +62,8 @@ chrome.extension.onRequest.addListener(function(request, sender, callback) {
     }
 });
 
-
 function capturePage(data, sender, callback) {
     var canvas;
-    
-    alert('entro aca');
 
         // Get window.devicePixelRatio from the page, not the popup
     var scale = data.devicePixelRatio && data.devicePixelRatio !== 1 ?
