@@ -26,7 +26,7 @@ header h1 {
 }
 
 section {
-    padding:20px;
+    padding: 10px 20px;
 }
 
 h4{
@@ -38,23 +38,16 @@ p{
 }
 
 
-.detail{
-    width: 100%;
-    display: inline-flex;
-}
-
 #loading{
     font-size: 20px;
     text-align: center;
 }
 
-#loading p{
-     text-align:left;
+.detail{
+    width: 100%;
+    display: inline-flex;
 }
 
-svg {
-     fill: black;
-}
 
 .details{
     width: 130px;
@@ -85,7 +78,7 @@ svg {
 #submit{
     width:180px;
     height: 50px;
-    margin-top: 35px;
+    margin-top: 25px;
     font-weight: bold;
     font-size: 18px;
     text-align: center;
@@ -109,7 +102,7 @@ svg {
     height: 267px;
 }
 
-.img-container p{
+.img-container p {
     height: 245px;
     width: 100px;
 }
