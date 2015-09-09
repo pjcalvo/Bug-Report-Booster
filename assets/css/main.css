@@ -37,8 +37,23 @@ p{
     margin-bottom: 2px;
 }
 
+#verifying{
+    display: none;
+}
+
+#failed{
+    display: -webkit-inline-box;
+}
+
+#alert-icon{
+    max-width: 20px;
+    max-height: 20px;
+    margin-right: 10px;
+    padding-top: 8px;
+}
 
 #loading{
+    display: none;
     font-size: 20px;
     text-align: center;
 }
@@ -106,6 +121,7 @@ p{
     height: 245px;
     width: 100px;
 }
+
 .spinner {
   margin: 50px auto;
   width: 50%;

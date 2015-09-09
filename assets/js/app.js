@@ -12,24 +12,33 @@ function hide(id) {
 //
 // URL Matching test - to verify we can talk to this URL
 //
-var matches = ['http://*/*', 'https://*/*', 'ftp://*/*', 'file://*/*'],
-    noMatches = [/^https?:\/\/chrome.google.com\/.*$/];
+
+var environments = config.testing_environments;
+var matches = [];
+
+for(var i = 0; i < environments.length; i++){
+    matches.push(environments[i].url_format);
+}
+console.log(matches);
+
+
+
 function testURLMatches(url) {
     // couldn't find a better way to tell if executeScript
     // wouldn't work -- so just testing against known urls
     // for now...
     var r, i;
-    for (i=noMatches.length-1; i>=0; i--) {
-        if (noMatches[i].test(url)) {
-            return false;
-        }
-    }
     for (i=matches.length-1; i>=0; i--) {
         r = new RegExp('^' + matches[i].replace(/\*/g, '.*') + '$');
         if (r.test(url)) {
+            
+            hide('#verifying');
+            show('#loading');
             return true;
         }
     }
+    
+    show('#verifying');
     return false;
 }
 
@@ -210,7 +219,7 @@ chrome.tabs.getSelected(null, function(tab) {
             }
         }, 1000);
     } else {
-        alert('url not matches');
+        //alert('url not matches');
     }
 });
 
