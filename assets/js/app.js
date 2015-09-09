@@ -1,4 +1,4 @@
-var imageURL, os, browser, webURL;
+var imageURL, os, browser, webURL, environment;
 
 
 function show(id) { 
@@ -31,7 +31,8 @@ function testURLMatches(url) {
     for (i=matches.length-1; i>=0; i--) {
         r = new RegExp('^' + matches[i].replace(/\*/g, '.*') + '$');
         if (r.test(url)) {
-            
+                
+            environment = config.testing_environments[i].value;
             hide('#verifying');
             show('#loading');
             return true;
@@ -226,11 +227,16 @@ chrome.tabs.getSelected(null, function(tab) {
 
 function openTFS(){
     
-    chrome.runtime.sendMessage(
-        {"imageURL": imageURL,
+    var environmentData = {"imageURL": imageURL,
          "os":os,
          "browser":browser,
-         "webURL": webURL}, 
+         "webURL": webURL,
+         "environment": environment,
+          "tfsUrl" : config.bug_tracking_tool.url
+    };
+    
+    chrome.runtime.sendMessage(environmentData
+        , 
         function(response) {
         console.log('responsed');
     });
