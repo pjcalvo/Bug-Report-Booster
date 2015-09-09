@@ -210,7 +210,7 @@ chrome.tabs.getSelected(null, function(tab) {
             }
         }, 1000);
     } else {
-        //show('invalid');
+        alert('url not matches');
     }
 });
 
@@ -225,6 +225,12 @@ function openTFS(){
         function(response) {
         console.log('responsed');
     });
+}
+
+
+// onload
+window.onload = function(){
+    $("#header-image").prop("src",config.company_logo);
 }
 
 document.getElementById("submit").addEventListener("click", openTFS);
