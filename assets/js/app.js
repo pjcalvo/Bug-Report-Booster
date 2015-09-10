@@ -120,6 +120,9 @@ function capturePage(data, sender, callback) {
                     callback(true);
                 };
                 image.src = dataURI;
+                
+                $('#link-popup').attr('href',dataURI);
+                            
             }
         });
 }
@@ -179,7 +182,7 @@ function openPage() {
         $('#url').attr('value', contentURL);   
         $('#browser').attr('value', os);
         $('#os').attr('value', browser);
-         
+        
          hide('#loading');
          show('#loaded');
         
@@ -246,6 +249,15 @@ function openTFS(){
 // onload
 window.onload = function(){
     $("#header-image").prop("src",config.company_logo);
+    $(document).ready(function() {
+              $('.image-link').magnificPopup({type:'image'});
+            });
 }
 
 document.getElementById("submit").addEventListener("click", openTFS);
+
+
+$('#link-popup').magnificPopup({ 
+  type: 'image'
+	// other options
+});

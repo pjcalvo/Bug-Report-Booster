@@ -5,6 +5,7 @@
         <title>Bug Report Booster</title>
         <meta name="description" content="">
         <link rel="stylesheet" href="/assets/css/main.css">
+        <link rel="stylesheet" href="/assets/css/magnific-popup.css">
     </head>
     <body>
         <header>
@@ -66,7 +67,9 @@
 
                 <div class="img-container detail">
                     <p class="details">Screenshot: </p>
-                    <img id="screen-capture" src="/assets/images/default.png"></img>
+                    <a id="link-popup" class="test-popup-link" href="">
+                        <img id="screen-capture" src=""></img>
+                    </a>
                 </div>
 
                 <div class="submit-container">
@@ -76,9 +79,13 @@
         </section>
     
         <script id= "configFile" src="configuration.json"></script>
-        <script src="assets/js/app.js"></script>
+    
         <script src="assets/js/vendors/jquery.js"></script>
+        <script src="assets/js/vendors/magnific-popup.js"></script>    
+        <script src="assets/js/app.js"></script>
+                
         <script src="assets/js/vendors/detect.js"></script>
+    
     </body>
 </html>
 
