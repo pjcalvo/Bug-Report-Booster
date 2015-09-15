@@ -1,6 +1,7 @@
 var config = {
     "configuration_version": 0.5,
     "company_logo": "/assets/images/1800logo.png",
+    "bug_prefix" : "BRB | ",
     
     "bug_tracking_tool" : {
         "url": "https://tfs/tfs/DefaultCollection/Ecommerce/_workitems#witd=Bug&id=1&_a=new",
@@ -24,7 +25,8 @@ var config = {
             "name": "dev", 
             "url_format": "*development-ecom2-1800contacts*",
             "value": "development",
-        }
+        },
+        
     ],
         
     

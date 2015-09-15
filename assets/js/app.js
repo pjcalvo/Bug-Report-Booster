@@ -235,7 +235,8 @@ function openTFS(){
          "browser":browser,
          "webURL": webURL,
          "environment": environment,
-          "tfsUrl" : config.bug_tracking_tool.url
+        "tfsUrl" : config.bug_tracking_tool.url,
+         "bugPrefix" : config.bug_prefix
     };
     
     chrome.runtime.sendMessage(environmentData

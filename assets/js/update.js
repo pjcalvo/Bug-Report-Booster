@@ -26,7 +26,7 @@ function sendTheInfo(){
     
     //set content and focus
     var titleText =  $('#witc_125_txt');
-    titleText.val('BRB | ');
+    titleText.val(environmentData.bugPrefix);
     titleText.focus();
     
       
