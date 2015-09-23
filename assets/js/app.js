@@ -263,9 +263,15 @@ $('#link-popup').magnificPopup({
 	// other options
 });
 
-document.getElementById("configurarion-icon").addEventListener("click", showConfigurationDiv);
+document.getElementById("configuration-icon").addEventListener("click", showHideConfigurationDiv);
 
-function showConfigurationDiv(){
-    hide('#loaded');
-    show('#configuration');
+function showHideConfigurationDiv(){
+    if($('#configuration').css('display') == "none"){
+        hide('#loaded');
+        show('#configuration');
+    }
+    else{
+        hide('#configuration');
+        show('#loaded');
+    }
 }
