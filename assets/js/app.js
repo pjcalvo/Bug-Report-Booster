@@ -262,3 +262,10 @@ $('#link-popup').magnificPopup({
   type: 'image'
 	// other options
 });
+
+document.getElementById("configurarion-icon").addEventListener("click", showConfigurationDiv);
+
+function showConfigurationDiv(){
+    hide('#loaded');
+    show('#configuration');
+}
