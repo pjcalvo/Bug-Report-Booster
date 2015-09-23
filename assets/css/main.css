@@ -37,6 +37,15 @@ p{
     margin-bottom: 2px;
 }
 
+#configuration-icon{
+    height: 40px;
+    margin-right: 30px;
+}
+
+#configuration{
+    display: none;   
+}
+
 #verifying{
     display: none;
 }

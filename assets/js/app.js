@@ -201,7 +201,7 @@ function openPage() {
             }, errorHandler);
         }, errorHandler);
     }, errorHandler);
-}
+} 
 
 //
 // start doing stuff immediately! - including error cases
@@ -262,3 +262,16 @@ $('#link-popup').magnificPopup({
   type: 'image'
 	// other options
 });
+
+document.getElementById("configuration-icon").addEventListener("click", showHideConfigurationDiv);
+
+function showHideConfigurationDiv(){
+    if($('#configuration').css('display') == "none"){
+        hide('#loaded');
+        show('#configuration');
+    }
+    else{
+        hide('#configuration');
+        show('#loaded');
+    }
+}
