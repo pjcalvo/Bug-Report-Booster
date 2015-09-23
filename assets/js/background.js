@@ -1,32 +1,25 @@
-var imageURL, os, browser, webURL;
+var environmentData;
 
 chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
-     imageURL = request.imageURL;
-      os = request.os;
-      browser = request.browser;
-      webURL = request.webURL;
-      
+     environmentData = request;  
       openTFS();
   });
 
 function openTFS() {
            
-        var tfsUrl = 'https://tfs/tfs/DefaultCollection/Ecommerce/_workitems#witd=Bug&id=1&_a=new';    
-    
         var tabId = '';
     
-        chrome.downloads.download({"url":imageURL}, function (){});
+        chrome.downloads.download({"url":environmentData.imageURL}, function (){});
     
-        chrome.tabs.create({url : tfsUrl}, function(tab) { 
+        chrome.tabs.create({url : environmentData.tfsUrl}, function(tab) { 
             tabId = tab.id;
-            //chrome.tabs.executeScript(tabId, {file: '/assets/js/update.js'})
         });
             
             setTimeout(function(){
             
             chrome.tabs.query({active: true, currentWindow: true}, function() {
-                chrome.tabs.sendMessage(tabId, {'os': os, 'browser' : browser, 'imageURL' : imageURL, 'webURL': webURL}, function(response) {
+                chrome.tabs.sendMessage(tabId, environmentData, function(response) {
                         console.log(response.farewell);
                     });
             });
