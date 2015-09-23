@@ -201,7 +201,7 @@ function openPage() {
             }, errorHandler);
         }, errorHandler);
     }, errorHandler);
-}
+} 
 
 //
 // start doing stuff immediately! - including error cases
